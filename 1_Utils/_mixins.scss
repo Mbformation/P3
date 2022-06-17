@@ -1,0 +1,20 @@
+@mixin title {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: $c-black;
+}
+
+@mixin subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: $c-black;
+}
+
+@mixin paragraph {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: $c-black;
+}

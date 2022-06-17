@@ -1,0 +1,17 @@
+// Headings
+
+h1 {
+    @include title;
+    margin: 0;
+}
+
+h2 {
+    @include subtitle;
+    margin: 0;
+}
+
+// Paragraph
+p {
+    @include paragraph;
+    margin: 0;
+}
