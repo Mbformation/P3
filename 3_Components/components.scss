@@ -1,6 +1,11 @@
 button {
     background-color: $color-secondary;
-    border: 1px solid $color-secondary;
+    border: 0px solid $color-secondary;
     border-radius: 25px;
     color: $c-white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 255, 0.82) 75%);
 }
