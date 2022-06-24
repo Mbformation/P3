@@ -1,20 +1,22 @@
+// Mixins for text
+
 @mixin title {
-    font-family: "Roboto", sans-serif;
-    font-size: 26px;
+    font-size: 6.4vw;
     font-weight: 500;
     color: $c-black;
 }
 
 @mixin subtitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 22px;
-    font-weight: 300;
+    font-size: 4.7vw;
+    letter-spacing: 0.1vw;
+    font-weight: 200;
     color: $c-black;
 }
 
 @mixin paragraph {
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 4.2vw;
     font-weight: 500;
     color: $c-black;
 }
+
+// Mixins for 
