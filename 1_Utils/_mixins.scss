@@ -19,4 +19,7 @@
     color: $c-black;
 }
 
-// Mixins for 
+// Mixins for color
+@mixin gradiant {
+    background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
+}

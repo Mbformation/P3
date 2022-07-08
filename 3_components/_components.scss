@@ -1,78 +1,291 @@
 .logo {
     width: 48%;
-    padding-top: 6%;
+    padding-top: 7%;
     padding-bottom: 3.5%;
 }
 
 button {
     cursor: pointer;
     font-size: 4vw;
+    background-color: transparent;
+    border: none;
+}
+
+div [type=search] {
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 36vw;
+    font-size: 4.2vw;
+    color: #353535;
 }
 
 .button__gradient {
-    box-shadow: 0px 4px 4px 0px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 1.4vw 2vw 0 #C5C5C5;
     background-color: $color-secondary;
     border: 0px solid $color-secondary;
     border-radius: 7vw;
     color: $c-white;
-    padding-left: 6%;
+    padding-left: 5.5%;
     padding-right: 6%;
     padding-top: 4.5%;
     padding-bottom: 5%;
     background: linear-gradient(175deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 255, 0.82) 90%);
+    font-size: 4.1vw;
+
+}
+
+i {
+    color: #7E7E7E;
 }
 
 .button__icon {
-    box-shadow: 0px 2px 4px 3px rgba(239, 239, 239, 0.75);
+    box-shadow: 0 0.9vw 2.8vw 1.3vw #E6E6E6;
+    font-size: 4.1vw;
     font-weight: 600;
+    letter-spacing: -0.1vw;
     border: 0px solid $color-secondary;
     border-radius: 7vw;
-    padding-top: 7%;
+    padding-top: 9%;
     padding-bottom: 7%;
-    width: 100%;
-    margin-bottom: 5%;
+    width: 97%;
+    margin-bottom: 10%;
     text-align: start;
+    background-color: #F6F6F6;
+    display: flex;
+    margin-left: 2.5vw;
 
     i {
-        font-size: 5vw;
-        color: rgb(108, 108, 108);
+        font-size: 4.8vw;
         margin-right: 7%;
+        margin-left: 3%;
     }
 
     span {
+        display: block;
+        text-align: center;
+        line-height: 6.7vw;
+        width: 6.2vw;
+        height: 6.2vw;
         background-color: $color-primary;
         color: white;
         border-radius: 50%;
-        padding: 1vw;
-        margin-right: 7%;
+        overflow: visible;
+        font-size: 3.5vw;
+        font-weight: 400;
+        transform: translateX(-3.5vw);
+    }
+}
+
+.button__icon:hover,
+.button__icon:active {
+    background-color: #F5EDFF;
+
+    i {
+        color: $color-primary;
+    }
+}
+
+.button__order {
+    background-color: $c-white;
+    box-shadow: 0 1.3vw 2.5vw 0.4vw #E5E5E5;
+    border: 0 solid $c-white;
+    border-radius: 4vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 4vw;
+    position: relative;
+
+    .full {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .content {
+
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        padding-left: 1.5vw;
+        display: flex;
+        flex-direction: column;
+        transition-duration: 800ms;
+
+
+        h3 {
+            text-align: left;
+            font-size: 4.6vw;
+            letter-spacing: -0.1vw;
+            font-weight: 600;
+            //width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width ease 800ms;
+        }
+
+        p {
+            text-align: left;
+            font-size: 3.7vw;
+            font-weight: 200;
+            padding-top: 0.7vw;
+            //width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width ease 800ms;
+        }
+    }
+
+    .price {
+        padding-bottom: 3.2vw;
+        font-weight: 600;
+        letter-spacing: -0.3vw;
+        color: #353535;
+        margin-right: 4.7vw;
         overflow: visible;
     }
 
-    i:hover {
-        color: $color-primary;
-    }
+    .checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 16.3vw;
+        ;
+        transition: width ease 800ms;
+        overflow: hidden;
+        height: 100%;
+        font-size: 6vw;
+        background-color: $color-tertiary;
+        border-radius: 0 4vw 4vw 0;
 
+        i {
+            color: white;
+            transition: transform ease 800ms;
+        }
+    }
 }
 
-.button__icon:hover {
-    background-color: rgb(237, 231, 241);
+.button__order:hover {
+
+    /*
+    .content {
+        width: 70%;
+        transition-duration: 800ms;
+
+    }
+    */
+    .checkbox {
+        //width: 16.3vw;
+        transition-duration: 800ms;
+
+        i {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.card {
+    text-decoration: none;
+    border: 0 solid $c-black;
+    border-radius: 4vw;
+    color: $c-black;
+    overflow: hidden;
+    background-color: $c-white;
+    margin-top: 5vw;
+    box-shadow: 0 1vw 2.5vw 0.5vw #E5E5E5;
+
+    .container-column {
+        position: relative;
+    }
+
+    .label-new {
+        position: absolute;
+        color: #008766;
+        font-size: 3.7vw;
+        background-color: $color-tertiary;
+        padding: 1.8vw 3.4vw 1.4vw 3.4vw;
+        border-radius: 0.5vw;
+        top: 3.5vw;
+        right: 3.5vw;
+    }
+
+    .label-new {
+        display: none;
+    }
+
+    img {
+        height: 47vw;
+        object-fit: cover;
+    }
+
+    .container-row {
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 4.5vw;
+        padding-left: 3.5vw;
+        padding-right: 6.5vw;
+        padding-bottom: 4vw;
+    }
+
+    h3 {
+        font-size: 4.8vw;
+    }
+
+    p {
+        padding-top: 1vw;
+        font-size: 4.5vw;
+        font-weight: 300;
+    }
+
+
+    i {
+        font-size: 6.2vw;
+        transition: 0.8s;
+        color: $c-black;
+
+
+        &:hover {
+            font-weight: 600;
+            background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
+            background-clip: text;
+            color: transparent;
+        }
+    }
+}
+
+.card--new {
+    .label-new {
+        display: initial;
+    }
 }
 
 .first-section {
 
-    div:first-child {
+    .search {
         padding-top: 4.5%;
         padding-bottom: 3.5%;
         background-color: $c-gray--darkened;
-        box-shadow: 0px 2px 2px 0px rgb(195, 195, 195) inset;
+        box-shadow: inset 0 0.8vw 0.7vw 0 #CFCFCF;
 
         .fa-location-dot {
-            font-size: 4.2vw;
-            padding-right: 5%;
+            font-size: 4.3vw;
+            padding-right: 3.5%;
+            color: #353535;
+        }
+
+        p {
+            color: #353535;
         }
     }
 
-    div:last-child {
+    .explore {
         text-align: center;
         padding-top: 11%;
         padding-bottom: 15.5%;
@@ -80,10 +293,14 @@ button {
 
         h1 {
             padding-bottom: 3%;
+            padding-left: 10%;
+            padding-right: 15%;
         }
 
         h2 {
             padding-bottom: 8.5%;
+            padding-left: 4.5%;
+            color: #353535;
         }
     }
 }
@@ -92,5 +309,132 @@ button {
     h1 {
         padding-top: 12%;
         padding-bottom: 8%;
+    }
+}
+
+.third-section {
+    h1 {
+        padding-top: 14vw;
+    }
+
+    .wrapper>.container-column {
+        margin-bottom: 17vw;
+    }
+}
+
+footer {
+    span {
+        font-family: "Shrikhand", cursive;
+        font-size: 4.4vw;
+        letter-spacing: 0.25vw;
+        color: $c-white;
+        padding-top: 5.8vw;
+        padding-bottom: 3vw;
+    }
+
+    ul {
+        padding: 0 0 7vw 0;
+        margin: 0;
+    }
+
+    li {
+        list-style-type: none;
+        padding-top: 1vw;
+
+    }
+
+    li .fa-utensils {
+        color: $c-white;
+        font-size: 4vw;
+        margin-right: 3vw;
+    }
+
+    li .fa-handshake-angle {
+        color: $c-white;
+        font-size: 3vw;
+        margin-right: 3vw;
+    }
+
+    li a {
+        color: $c-white;
+        text-decoration: none;
+        font-size: 4.1vw;
+        letter-spacing: 0.1vw;
+    }
+}
+
+// Page restaurant-unique
+
+.restaurant-unique {
+
+
+    header {
+        .fa-arrow-left {
+            padding-top: 3vw;
+            padding-right: 17vw;
+            padding-left: 2vw;
+            color: #353535;
+            font-size: 5.4vw;
+        }
+    }
+
+    .background-image {
+
+
+        img {
+            height: 70vw;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
+
+    .order {
+        background-color: #F6F6F6;
+        border-radius: 12vw 12vw 0 0;
+        position: relative;
+        top: 58vw;
+
+        .restaurant-name {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+
+
+            h1 {
+                font-family: "Shrikhand", cursive;
+                font-size: 7.2vw;
+                font-weight: 100;
+                letter-spacing: 0.15vw;
+                padding-top: 9vw;
+                padding-left: 1.5vw;
+            }
+
+            i {
+                font-size: 6vw;
+                color: $c-black;
+                padding-right: 6.5vw;
+            }
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 4.2vw;
+            letter-spacing: -0.01vw;
+            font-weight: 300;
+            padding-bottom: 1vw;
+            padding-top: 8.5vw;
+        }
+
+        .button__gradient {
+            margin-top: 13vw;
+            margin-bottom: 22vw;
+            width: 50vw;
+        }
+    }
+
+    footer {
+        position: relative;
+        top: 58vw;
     }
 }
