@@ -1,12 +1,12 @@
 .logo {
-    width: 48%;
-    padding-top: 7%;
-    padding-bottom: 3.5%;
+    width: 140px;
+    padding-top: min(18.5px, 7%);
+    padding-bottom: min(9px, 3.5%);
 }
 
 button {
     cursor: pointer;
-    font-size: 4vw;
+    font-size: 12.8px;
     background-color: transparent;
     border: none;
 }
@@ -15,23 +15,23 @@ div [type=search] {
     background: transparent;
     outline: none;
     border: none;
-    width: 36vw;
-    font-size: 4.2vw;
+    width: 115.2px;
+    font-size: 13.44px;
     color: #353535;
 }
 
 .button__gradient {
-    box-shadow: 0 1.4vw 2vw 0 #C5C5C5;
+    box-shadow: 0 4.48px 6.4px 0 #C5C5C5;
     background-color: $color-secondary;
-    border: 0px solid $color-secondary;
-    border-radius: 7vw;
+    border: 0 solid $color-secondary;
+    border-radius: 22.4px;
     color: $c-white;
-    padding-left: 5.5%;
-    padding-right: 6%;
-    padding-top: 4.5%;
-    padding-bottom: 5%;
+    padding-left: min(17.8px, 5.5%);
+    padding-right: min(19.4px, 6%);
+    padding-top: min(14.5px, 4.5%);
+    padding-bottom: min(16.2px, 5%);
     background: linear-gradient(175deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 255, 0.82) 90%);
-    font-size: 4.1vw;
+    font-size: 13.12px;
 
 }
 
@@ -40,23 +40,24 @@ i {
 }
 
 .button__icon {
-    box-shadow: 0 0.9vw 2.8vw 1.3vw #E6E6E6;
-    font-size: 4.1vw;
+    box-shadow: 0 2.88px 8.96px 4.16px #E6E6E6;
+    font-size: 13.12px;
     font-weight: 600;
-    letter-spacing: -0.1vw;
+    letter-spacing: -0.32px;
     border: 0px solid $color-secondary;
-    border-radius: 7vw;
-    padding-top: 9%;
-    padding-bottom: 7%;
+    border-radius: 22.4px;
+    padding-top: min(29px, 9%);
+    padding-bottom: min(22px, 7%);
     width: 97%;
-    margin-bottom: 10%;
+    margin-bottom: min(32px, 10%);
     text-align: start;
     background-color: #F6F6F6;
     display: flex;
-    margin-left: 2.5vw;
+    margin-left: 8px;
+    max-width: 306px;
 
     i {
-        font-size: 4.8vw;
+        font-size: 15.36px;
         margin-right: 7%;
         margin-left: 3%;
     }
@@ -64,16 +65,16 @@ i {
     span {
         display: block;
         text-align: center;
-        line-height: 6.7vw;
-        width: 6.2vw;
-        height: 6.2vw;
+        line-height: 21.44px;
+        width: 19.84px;
+        height: 19.84px;
         background-color: $color-primary;
         color: white;
         border-radius: 50%;
         overflow: visible;
-        font-size: 3.5vw;
+        font-size: 11.2px;
         font-weight: 400;
-        transform: translateX(-3.5vw);
+        transform: translateX(-11.2px);
     }
 }
 
@@ -88,14 +89,14 @@ i {
 
 .button__order {
     background-color: $c-white;
-    box-shadow: 0 1.3vw 2.5vw 0.4vw #E5E5E5;
+    box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
     border: 0 solid $c-white;
-    border-radius: 4vw;
+    border-radius: 12.8px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 4vw;
+    margin-top: 12.8px;
     position: relative;
 
     .full {
@@ -107,9 +108,9 @@ i {
 
     .content {
 
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-        padding-left: 1.5vw;
+        padding-top: 9.6px;
+        padding-bottom: 9.6px;
+        padding-left: 4.8px;
         display: flex;
         flex-direction: column;
         transition-duration: 800ms;
@@ -117,8 +118,8 @@ i {
 
         h3 {
             text-align: left;
-            font-size: 4.6vw;
-            letter-spacing: -0.1vw;
+            font-size: 14.72px;
+            letter-spacing: -0.32px;
             font-weight: 600;
             //width: 100%;
             text-overflow: ellipsis;
@@ -129,9 +130,9 @@ i {
 
         p {
             text-align: left;
-            font-size: 3.7vw;
+            font-size: 11.84px;
             font-weight: 200;
-            padding-top: 0.7vw;
+            padding-top: 2.24px;
             //width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -141,11 +142,11 @@ i {
     }
 
     .price {
-        padding-bottom: 3.2vw;
+        padding-bottom: 10.24px;
         font-weight: 600;
-        letter-spacing: -0.3vw;
+        letter-spacing: -0.96px;
         color: #353535;
-        margin-right: 4.7vw;
+        margin-right: 15.04px;
         overflow: visible;
     }
 
@@ -156,14 +157,13 @@ i {
         position: absolute;
         top: 0;
         right: 0;
-        width: 16.3vw;
-        ;
+        width: 52.16px;
         transition: width ease 800ms;
         overflow: hidden;
         height: 100%;
-        font-size: 6vw;
+        font-size: 19.2px;
         background-color: $color-tertiary;
-        border-radius: 0 4vw 4vw 0;
+        border-radius: 0 12.8px 12.8px 0;
 
         i {
             color: white;
@@ -182,7 +182,7 @@ i {
     }
     */
     .checkbox {
-        //width: 16.3vw;
+        //width: 52.16px;
         transition-duration: 800ms;
 
         i {
@@ -194,12 +194,12 @@ i {
 .card {
     text-decoration: none;
     border: 0 solid $c-black;
-    border-radius: 4vw;
+    border-radius: 12.8px;
     color: $c-black;
     overflow: hidden;
     background-color: $c-white;
-    margin-top: 5vw;
-    box-shadow: 0 1vw 2.5vw 0.5vw #E5E5E5;
+    margin-top: 16px;
+    box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
 
     .container-column {
         position: relative;
@@ -208,12 +208,12 @@ i {
     .label-new {
         position: absolute;
         color: #008766;
-        font-size: 3.7vw;
+        font-size: 11.84px;
         background-color: $color-tertiary;
-        padding: 1.8vw 3.4vw 1.4vw 3.4vw;
-        border-radius: 0.5vw;
-        top: 3.5vw;
-        right: 3.5vw;
+        padding: 5.76px 10.88px 4.48px 10.88px;
+        border-radius: 1.6px;
+        top: 11.2px;
+        right: 11.2px;
     }
 
     .label-new {
@@ -221,43 +221,80 @@ i {
     }
 
     img {
-        height: 47vw;
+        height: 150.4px;
         object-fit: cover;
     }
 
     .container-row {
         justify-content: space-between;
         align-items: center;
-        padding-top: 4.5vw;
-        padding-left: 3.5vw;
-        padding-right: 6.5vw;
-        padding-bottom: 4vw;
+        padding-top: 14.4px;
+        padding-left: 11.2px;
+        padding-right: 20.8px;
+        padding-bottom: 12.8px;
     }
 
     h3 {
-        font-size: 4.8vw;
+        font-size: 15.36px;
     }
 
     p {
-        padding-top: 1vw;
-        font-size: 4.5vw;
+        padding-top: 3.2px;
+        font-size: 14.4px;
         font-weight: 300;
     }
 
 
-    i {
-        font-size: 6.2vw;
-        transition: 0.8s;
-        color: $c-black;
 
 
-        &:hover {
-            font-weight: 600;
-            background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
-            background-clip: text;
-            color: transparent;
+
+    .heart-top {
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: flex-start;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .heart-top i {
+        background: white;
+        height: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: height ease 0.2s;
+        font-size: 14px;
+    }
+
+    .heart-top:hover {
+        i {
+            height: 0;
         }
     }
+
+    .heart-bottom {
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: flex-start;
+        background: transparent;
+        padding: 0;
+    }
+
+    .heart-bottom i {
+        height: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: height ease 0.2s;
+        font-size: 14px;
+        background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 600;
+    }
+
 }
 
 .card--new {
@@ -269,37 +306,45 @@ i {
 .first-section {
 
     .search {
-        padding-top: 4.5%;
-        padding-bottom: 3.5%;
         background-color: $c-gray--darkened;
-        box-shadow: inset 0 0.8vw 0.7vw 0 #CFCFCF;
+
+
+        .wrapper {
+            box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
+            padding-top: min(15px, 4.5%);
+            padding-bottom: min(10px, 3.5%);
+        }
 
         .fa-location-dot {
-            font-size: 4.3vw;
-            padding-right: 3.5%;
+            font-size: 13.76px;
+            padding-right: min(12px, 3.5%);
             color: #353535;
         }
 
         p {
             color: #353535;
         }
+
+        .wrapper [type=search] {
+            padding: 0;
+        }
     }
 
     .explore {
         text-align: center;
-        padding-top: 11%;
-        padding-bottom: 15.5%;
+        padding-top: min(35px, 11%);
+        padding-bottom: min(50px, 15.5%);
         background-color: $c-gray;
 
         h1 {
-            padding-bottom: 3%;
-            padding-left: 10%;
-            padding-right: 15%;
+            padding-bottom: min(10px, 3%);
+            //padding-left: 10%;
+            //padding-right: 15%;
         }
 
         h2 {
-            padding-bottom: 8.5%;
-            padding-left: 4.5%;
+            padding-bottom: min(27.5, 8.5%);
+            //padding-left: 4.5%;
             color: #353535;
         }
     }
@@ -307,59 +352,59 @@ i {
 
 .second-section {
     h1 {
-        padding-top: 12%;
-        padding-bottom: 8%;
+        padding-top: min(39px, 12%);
+        padding-bottom: min(26px, 8%);
     }
 }
 
 .third-section {
     h1 {
-        padding-top: 14vw;
+        padding-top: 44.8px;
     }
 
     .wrapper>.container-column {
-        margin-bottom: 17vw;
+        margin-bottom: 54.4px;
     }
 }
 
 footer {
     span {
         font-family: "Shrikhand", cursive;
-        font-size: 4.4vw;
-        letter-spacing: 0.25vw;
+        font-size: 14.08px;
+        letter-spacing: 1px;
         color: $c-white;
-        padding-top: 5.8vw;
-        padding-bottom: 3vw;
+        padding-top: 18.56px;
+        padding-bottom: 9.6px;
     }
 
     ul {
-        padding: 0 0 7vw 0;
+        padding: 0 0 22.4px 0;
         margin: 0;
     }
 
     li {
         list-style-type: none;
-        padding-top: 1vw;
+        padding-top: 3.2px;
 
     }
 
     li .fa-utensils {
         color: $c-white;
-        font-size: 4vw;
-        margin-right: 3vw;
+        font-size: 12.8px;
+        margin-right: 9.6px;
     }
 
     li .fa-handshake-angle {
         color: $c-white;
-        font-size: 3vw;
-        margin-right: 3vw;
+        font-size: 9.6px;
+        margin-right: 9.6px;
     }
 
     li a {
         color: $c-white;
         text-decoration: none;
-        font-size: 4.1vw;
-        letter-spacing: 0.1vw;
+        font-size: 13.12px;
+        letter-spacing: 0.32px;
     }
 }
 
@@ -370,11 +415,11 @@ footer {
 
     header {
         .fa-arrow-left {
-            padding-top: 3vw;
-            padding-right: 17vw;
-            padding-left: 2vw;
+            padding-top: 9.6px;
+            padding-right: 54.4px;
+            padding-left: 6.4px;
             color: #353535;
-            font-size: 5.4vw;
+            font-size: 17.28px;
         }
     }
 
@@ -382,7 +427,7 @@ footer {
 
 
         img {
-            height: 70vw;
+            height: 224px;
             width: 100%;
             object-fit: cover;
             position: absolute;
@@ -391,9 +436,9 @@ footer {
 
     .order {
         background-color: #F6F6F6;
-        border-radius: 12vw 12vw 0 0;
+        border-radius: 38.4px 38.4px 0 0;
         position: relative;
-        top: 58vw;
+        top: 185.6px;
 
         .restaurant-name {
             display: flex;
@@ -403,38 +448,38 @@ footer {
 
             h1 {
                 font-family: "Shrikhand", cursive;
-                font-size: 7.2vw;
+                font-size: 23px;
                 font-weight: 100;
-                letter-spacing: 0.15vw;
-                padding-top: 9vw;
-                padding-left: 1.5vw;
+                letter-spacing: 0.48px;
+                padding-top: 28.8px;
+                padding-left: 4.8px;
             }
 
             i {
-                font-size: 6vw;
+                font-size: 19.2px;
                 color: $c-black;
-                padding-right: 6.5vw;
+                padding-right: 20.8px;
             }
         }
 
         h2 {
             text-transform: uppercase;
-            font-size: 4.2vw;
-            letter-spacing: -0.01vw;
+            font-size: 13.44px;
+            letter-spacing: -0.032px;
             font-weight: 300;
-            padding-bottom: 1vw;
-            padding-top: 8.5vw;
+            padding-bottom: 3.2px;
+            padding-top: 27.2px;
         }
 
         .button__gradient {
-            margin-top: 13vw;
-            margin-bottom: 22vw;
-            width: 50vw;
+            margin-top: 41.6px;
+            margin-bottom: 70.4px;
+            width: 160px;
         }
     }
 
     footer {
         position: relative;
-        top: 58vw;
+        top: 185.6px;
     }
 }

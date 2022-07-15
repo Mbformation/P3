@@ -1,20 +1,20 @@
 // Mixins for text
 
 @mixin title {
-    font-size: 6.4vw;
+    font-size: 20.48px;
     font-weight: 500;
     color: $c-black;
 }
 
 @mixin subtitle {
-    font-size: 4.7vw;
-    letter-spacing: 0.1vw;
+    font-size: 15.04px;
+    letter-spacing: 0.32px;
     font-weight: 200;
     color: $c-black;
 }
 
 @mixin paragraph {
-    font-size: 4.2vw;
+    font-size: 13.44px;
     font-weight: 500;
     color: $c-black;
 }
