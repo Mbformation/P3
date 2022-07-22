@@ -1,3 +1,21 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-item {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 h1 {
   font-size: 20.48px;
   font-weight: 500;
@@ -30,6 +48,68 @@ p {
   padding-bottom: min(9px, 3.5%);
 }
 
+.heart-container {
+  position: relative;
+}
+.heart-container .heart-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 2px 3px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  background: transparent;
+  cursor: pointer;
+  height: 18px;
+}
+.heart-container .heart-top .heart1 {
+  color: black;
+  background: white;
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: height ease 0.5s;
+  font-size: 18px;
+  width: 20px;
+}
+.heart-container .heart-top:active .heart1 {
+  height: 0;
+}
+@media only screen and (min-width: 992px) {
+  .heart-container .heart-top:hover .heart1 {
+    height: 0;
+  }
+}
+.heart-container .heart-bottom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 3px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  background: transparent;
+  height: 18px;
+  overflow: hidden;
+}
+.heart-container .heart-bottom .heart2 {
+  height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: height ease 0.2s;
+  font-size: 18px;
+  background: linear-gradient(20deg, #FF79DA, #9356DC 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  width: 20px;
+}
+
 button {
   cursor: pointer;
   font-size: 12.8px;
@@ -48,7 +128,6 @@ div [type=search] {
 
 .button__gradient {
   box-shadow: 0 4.48px 6.4px 0 #C5C5C5;
-  background-color: #FF79DA;
   border: 0 solid #FF79DA;
   border-radius: 22.4px;
   color: white;
@@ -58,6 +137,10 @@ div [type=search] {
   padding-bottom: min(16.2px, 5%);
   background: linear-gradient(175deg, rgb(255, 121, 218) 0%, rgba(147, 86, 255, 0.82) 90%);
   font-size: 13.12px;
+}
+.button__gradient:hover {
+  background: linear-gradient(175deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 255, 0.65) 90%);
+  box-shadow: 0 6.7px 9.5px 0 #C5C5C5;
 }
 
 i {
@@ -73,13 +156,13 @@ i {
   border-radius: 22.4px;
   padding-top: min(29px, 9%);
   padding-bottom: min(22px, 7%);
-  width: 97%;
   margin-bottom: min(32px, 10%);
   text-align: start;
   background-color: #F6F6F6;
   display: flex;
   margin-left: 8px;
   max-width: 306px;
+  min-width: 280px;
 }
 .button__icon i {
   font-size: 15.36px;
@@ -113,75 +196,77 @@ i {
 .button__order {
   background-color: white;
   box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
-  border: 0 solid white;
   border-radius: 12.8px;
-  width: 100%;
+  width: min(350px, 100%);
+  height: 55px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   margin-top: 12.8px;
-  position: relative;
+  padding-right: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.button__order .full {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
+@media only screen and (min-width: 992px) {
+  .button__order {
+    width: 450px;
+  }
 }
 .button__order .content {
+  width: 100%;
   padding-top: 9.6px;
   padding-bottom: 9.6px;
   padding-left: 4.8px;
   display: flex;
   flex-direction: column;
-  transition-duration: 800ms;
-}
-.button__order .content h3 {
+  min-width: 0;
   text-align: left;
+}
+.button__order .content .recipe-title {
   font-size: 14.72px;
   letter-spacing: -0.32px;
   font-weight: 600;
+  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  transition: width ease 800ms;
 }
-.button__order .content p {
-  text-align: left;
+.button__order .content .recipe-content {
   font-size: 11.84px;
   font-weight: 200;
   padding-top: 2.24px;
+  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  transition: width ease 800ms;
 }
 .button__order .price {
   padding-bottom: 10.24px;
   font-weight: 600;
   letter-spacing: -0.96px;
   color: #353535;
-  margin-right: 15.04px;
-  overflow: visible;
+  margin-right: 19px;
+  margin-left: 10px;
 }
 .button__order .checkbox {
+  width: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 52.16px;
-  transition: width ease 800ms;
-  overflow: hidden;
-  height: 100%;
-  font-size: 19.2px;
+  justify-content: center;
+  transition: margin ease 0.6s;
+  height: calc(100% + 2px);
+  font-size: 17px;
   background-color: #99E2D0;
   border-radius: 0 12.8px 12.8px 0;
+  margin-bottom: -1px;
+  margin-right: min(-67px, -20%);
+}
+@media only screen and (min-width: 768px) {
+  .button__order .checkbox {
+    margin-right: -70px;
+  }
 }
 .button__order .checkbox i {
   color: white;
-  transition: transform ease 800ms;
 }
 
 .button__order:hover {
@@ -194,10 +279,12 @@ i {
   */
 }
 .button__order:hover .checkbox {
-  transition-duration: 800ms;
+  margin-right: 0px;
 }
 .button__order:hover .checkbox i {
-  transform: rotate(360deg);
+  animation-name: spin;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
 }
 
 .card {
@@ -209,6 +296,7 @@ i {
   background-color: white;
   margin-top: 16px;
   box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
+  width: max(290px, 20%);
 }
 .card .container-column {
   position: relative;
@@ -235,8 +323,20 @@ i {
   align-items: center;
   padding-top: 14.4px;
   padding-left: 11.2px;
-  padding-right: 20.8px;
+  padding-right: 14px;
   padding-bottom: 12.8px;
+}
+.card .link-menu {
+  text-decoration: none;
+  color: black;
+}
+.card .link-menu:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
 }
 .card h3 {
   font-size: 15.36px;
@@ -246,45 +346,8 @@ i {
   font-size: 14.4px;
   font-weight: 300;
 }
-.card .heart-top {
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: flex-start;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-.card .heart-top i {
-  background: white;
-  height: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: height ease 0.2s;
-  font-size: 14px;
-}
-.card .heart-top:hover i {
-  height: 0;
-}
-.card .heart-bottom {
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: flex-start;
-  background: transparent;
-  padding: 0;
-}
-.card .heart-bottom i {
-  height: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: height ease 0.2s;
-  font-size: 14px;
-  background: linear-gradient(20deg, #FF79DA, #9356DC 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: 600;
+.card .heart-container {
+  margin-bottom: 15px;
 }
 
 .card--new .label-new {
@@ -293,9 +356,9 @@ i {
 
 .first-section .search {
   background-color: #EAEAEA;
+  box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
 }
 .first-section .search .wrapper {
-  box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
   padding-top: min(15px, 4.5%);
   padding-bottom: min(10px, 3.5%);
 }
@@ -320,7 +383,7 @@ i {
   padding-bottom: min(10px, 3%);
 }
 .first-section .explore h2 {
-  padding-bottom: 8.5%;
+  padding-bottom: min(24.5px, 8.5%);
   color: #353535;
 }
 
@@ -328,9 +391,19 @@ i {
   padding-top: min(39px, 12%);
   padding-bottom: min(26px, 8%);
 }
+@media only screen and (min-width: 768px) {
+  .second-section h1 {
+    text-align: center;
+  }
+}
 
 .third-section h1 {
   padding-top: 44.8px;
+}
+@media only screen and (min-width: 768px) {
+  .third-section h1 {
+    text-align: center;
+  }
 }
 .third-section .wrapper > .container-column {
   margin-bottom: 54.4px;
@@ -372,7 +445,6 @@ footer li a {
 .restaurant-unique header .fa-arrow-left {
   padding-top: 9.6px;
   padding-right: 54.4px;
-  padding-left: 6.4px;
   color: #353535;
   font-size: 17.28px;
 }
@@ -388,10 +460,17 @@ footer li a {
   position: relative;
   top: 185.6px;
 }
+.restaurant-unique .order .wrapper {
+  max-width: 360px;
+}
+@media only screen and (min-width: 992px) {
+  .restaurant-unique .order .wrapper {
+    max-width: 992px;
+  }
+}
 .restaurant-unique .order .restaurant-name {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  position: relative;
 }
 .restaurant-unique .order .restaurant-name h1 {
   font-family: "Shrikhand", cursive;
@@ -401,10 +480,12 @@ footer li a {
   padding-top: 28.8px;
   padding-left: 4.8px;
 }
-.restaurant-unique .order .restaurant-name i {
-  font-size: 19.2px;
-  color: black;
-  padding-right: 20.8px;
+.restaurant-unique .order .restaurant-name .heart-container {
+  margin-left: 82px;
+  transform: translateY(33px);
+}
+.restaurant-unique .order .restaurant-name .heart-container .heart1 {
+  background-color: #F6F6F6;
 }
 .restaurant-unique .order h2 {
   text-transform: uppercase;
@@ -414,12 +495,73 @@ footer li a {
   padding-bottom: 3.2px;
   padding-top: 27.2px;
 }
-.restaurant-unique .order .button__gradient {
+.restaurant-unique .order .starter .button__order-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.restaurant-unique .order .starter button {
+  animation: loading-item 1s ease-out both;
+}
+.restaurant-unique .order .starter button:nth-of-type(1) {
+  animation-delay: 0.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(3) {
+  animation-delay: 0.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(4) {
+  animation-delay: 1s;
+}
+.restaurant-unique .order .main .button__order-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.restaurant-unique .order .main button {
+  animation: loading-item 1s ease-out both;
+}
+.restaurant-unique .order .main button:nth-of-type(1) {
+  animation-delay: 0.25s;
+}
+.restaurant-unique .order .main button:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+.restaurant-unique .order .main button:nth-of-type(3) {
+  animation-delay: 0.75s;
+}
+.restaurant-unique .order .main button:nth-of-type(4) {
+  animation-delay: 1s;
+}
+.restaurant-unique .order .dessert .button__order-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.restaurant-unique .order .dessert button {
+  animation: loading-item 1s ease-out both;
+}
+.restaurant-unique .order .dessert button:nth-of-type(1) {
+  animation-delay: 0.25s;
+}
+.restaurant-unique .order .dessert button:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+.restaurant-unique .order .dessert button:nth-of-type(3) {
+  animation-delay: 0.75s;
+}
+.restaurant-unique .order .dessert button:nth-of-type(4) {
+  animation-delay: 1s;
+}
+.restaurant-unique .button__gradient {
   margin-top: 41.6px;
   margin-bottom: 70.4px;
   width: 160px;
 }
-.restaurant-unique footer {
+
+footer {
   position: relative;
   top: 185.6px;
 }
@@ -437,6 +579,12 @@ body .wrapper {
 body .container-row {
   display: flex;
 }
+body .container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: min(20px, 5%);
+}
 body .container-row__center {
   display: flex;
   justify-content: center;
@@ -450,17 +598,26 @@ body .container-column__center {
   flex-direction: column;
   align-items: center;
 }
-body .explore .wrapper {
-  max-width: 360px;
+body .second-section .button-container {
+  gap: min(20px, 5%);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 body .third-section {
   background-color: #F6F6F6;
 }
-body .third-section div:first-child {
-  padding-bottom: 16px;
+body .third-section .container-card {
+  padding-bottom: 56px;
 }
 body footer {
   background-color: #353535;
+}
+@media only screen and (min-width: 768px) {
+  body footer {
+    text-align: center;
+  }
 }
 
 header .wrapper {
@@ -468,13 +625,19 @@ header .wrapper {
   align-items: center;
 }
 
-.menu .wrapper {
+.restaurant-unique header {
+  justify-content: center;
+}
+.restaurant-unique header .wrapper {
+  width: 298px;
+}
+.restaurant-unique .wrapper {
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 11.2px;
 }
-.menu .text-container {
+.restaurant-unique .text-container {
   border-bottom: 3.2px solid #99E2D0;
   width: 33.6px;
   margin-left: 4.8px;

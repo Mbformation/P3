@@ -8,3 +8,26 @@ $c-black: black;
 $c-gray: #F6F6F6;
 $c-gray--darkened: #EAEAEA;
 $c-gradient: linear-gradient(20deg, $color-secondary, $color-primary 100%);
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-item {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

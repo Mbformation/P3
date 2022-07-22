@@ -30,92 +30,131 @@
             </div>
             <div class="order">
                 <div class="wrapper">
-                    <span class="restaurant-name">
+                    <div class="restaurant-name">
                         <h1>À la française</h1>
-                        <i class="fa-regular fa-heart"></i>
-                    </span>
+                        <div class="heart-container">
+                            <button type="submit">
+                                <span class="heart-top">
+                                    <i class="fa-regular fa-heart heart1"></i>
+                                </span>
+                            </button>
+                            <button type="submit">
+                                <span class="heart-bottom">
+                                    <i class="fa-regular fa-heart heart2"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="starter">
                         <div class="text-container">
                             <h2>Entrées</h2>
                         </div>
-                        <button type="submit" class="button button__order">
-                            <div class="full">
-                                <div class="content">
-                                    <h3>Tartare de poulpe acidulé</h3>
-                                    <p>Aux zests d'orange</p>
-                                </div>
-                                <div class="price">25€</div>
-                            </div>
-                            <div class="checkbox">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Velouté de légumes d'antan</h3>
-                                <p>Carotte, panais, topinambour</p>
-                            </div>
-                            <div class="price">35€</div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Soupe à l'oignon</h3>
-                                <p>Revisitée</p>
-                            </div>
-                            <div class="price">20€</div>
-                        </button>
+                        <div class="button__order-container">
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Tartare de poulpe acidulé</span>
+                                    <span class="recipe-content">Aux zests d'orange</span>
+                                </span>
+                                <span class="price">25€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Velouté de légumes d'antan</span>
+                                    <span class="recipe-content">Carotte, panais, topinambour</span>
+                                </span>
+                                <span class="price">35€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Soupe à l'oignon</span>
+                                    <span class="recipe-content">Revisitée</span>
+                                </span>
+                                <span class="price">20€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <div class="main">
                         <div class="text-container">
                             <h2>Plats</h2>
                         </div>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Coquilles Saint-Jacques</h3>
-                                <p>Accompagnées d'une purée de panais</p>
-                            </div>
-                            <div class="price">40€</div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Magret de canard</h3>
-                                <p>Et parmentier de pommes de terres</p>
-                            </div>
-                            <div class="price">35€</div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Pigeonneau d'Ille-et-Vilaine</h3>
-                                <p>Sur son lit de gnocchis aux légumes</p>
-                            </div>
-                            <div class="price">44€</div>
-                        </button>
+                        <div class="button__order-container">
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Coquilles Saint-Jacques</span>
+                                    <span class="recipe-content">Accompagnées d'une purée de panais</span>
+                                </span>
+                                <span class="price">40€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Magret de canard</span>
+                                    <span class="recipe-content">Et parmentier de pommes de terres</span>
+                                </span>
+                                <span class="price">35€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Pigeonneau d'Ille-et-Vilaine</span>
+                                    <span class="recipe-content">Sur son lit de gnocchis aux légumes</span>
+                                </span>
+                                <span class="price">44€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <div class="dessert">
                         <div class="text-container">
                             <h2>Desserts</h2>
                         </div>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Pétales de violettes glacés</h3>
-                                <p>Et purée de noisettes</p>
-                            </div>
-                            <div class="price">18€</div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Fondant au chocolat</h3>
-                                <p>Revisité</p>
-                            </div>
-                            <div class="price">22€</div>
-                        </button>
-                        <button type="submit" class="button button__order">
-                            <div class="content">
-                                <h3>Millefeuille croustillant</h3>
-                                <p>Myrtilles et pâte d'amande</p>
-                            </div>
-                            <div class="price">23€</div>
-                        </button>
+                        <div class="button__order-container">
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Pétales de violettes glacés</span>
+                                    <span class="recipe-content">Et purée de noisettes</span>
+                                </span>
+                                <span class="price">18€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Fondant au chocolat</span>
+                                    <span class="recipe-content">Revisité</span>
+                                </span>
+                                <span class="price">22€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                            <button type="submit" class="button button__order">
+                                <span class="content">
+                                    <span class="recipe-title">Millefeuille croustillant</span>
+                                    <span class="recipe-content">Myrtilles et pâte d'amande</span>
+                                </span>
+                                <span class="price">23€</span>
+                                <span class="checkbox">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <div class="container-row__center">
                         <button type="submit" class="button button__gradient">Commander</button>

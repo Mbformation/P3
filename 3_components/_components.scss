@@ -4,6 +4,84 @@
     padding-bottom: min(9px, 3.5%);
 }
 
+.heart-container {
+    position: relative;
+
+    .heart-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        padding: 2px 3px;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: flex-start;
+        background: transparent;
+        cursor: pointer;
+        //border: 1px black solid;
+        height: 18px;
+        //transform: translateX(38px);
+
+        .heart1 {
+            color: $c-black;
+            background: $c-white;
+            height: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: height ease 0.5s;
+            font-size: 18px;
+            width: 20px;
+        }
+
+    }
+
+    .heart-top:active {
+        .heart1 {
+            height: 0;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .heart-top:hover {
+            .heart1 {
+                height: 0;
+            }
+        }
+    }
+
+    .heart-bottom {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2px 3px;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: flex-start;
+        background: transparent;
+        //border: 1px solid black;
+        height: 18px;
+        overflow: hidden;
+
+        .heart2 {
+            height: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: height ease 0.2s;
+            font-size: 18px;
+            background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            width: 20px;
+        }
+    }
+}
+
+
+
 button {
     cursor: pointer;
     font-size: 12.8px;
@@ -22,7 +100,6 @@ div [type=search] {
 
 .button__gradient {
     box-shadow: 0 4.48px 6.4px 0 #C5C5C5;
-    background-color: $color-secondary;
     border: 0 solid $color-secondary;
     border-radius: 22.4px;
     color: $c-white;
@@ -33,7 +110,13 @@ div [type=search] {
     background: linear-gradient(175deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 255, 0.82) 90%);
     font-size: 13.12px;
 
+    &:hover {
+        background: linear-gradient(175deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 255, 0.65) 90%);
+        box-shadow: 0 6.7px 9.5px 0 #C5C5C5;
+    }
 }
+
+
 
 i {
     color: #7E7E7E;
@@ -48,13 +131,13 @@ i {
     border-radius: 22.4px;
     padding-top: min(29px, 9%);
     padding-bottom: min(22px, 7%);
-    width: 97%;
     margin-bottom: min(32px, 10%);
     text-align: start;
     background-color: #F6F6F6;
     display: flex;
     margin-left: 8px;
     max-width: 306px;
+    min-width: 280px;
 
     i {
         font-size: 15.36px;
@@ -90,54 +173,51 @@ i {
 .button__order {
     background-color: $c-white;
     box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
-    border: 0 solid $c-white;
+    //border: 0 solid $c-white;
     border-radius: 12.8px;
-    width: 100%;
+    width: min(350px, 100%);
+    height: 55px;
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
     margin-top: 12.8px;
-    position: relative;
+    padding-right: 0;
+    overflow: hidden;
+    white-space: nowrap;
 
-    .full {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
+    @media only screen and (min-width: 992px) {
+        width: 450px;
     }
 
     .content {
-
+        width: 100%;
         padding-top: 9.6px;
         padding-bottom: 9.6px;
         padding-left: 4.8px;
         display: flex;
         flex-direction: column;
-        transition-duration: 800ms;
+        min-width: 0;
+        text-align: left;
 
 
-        h3 {
-            text-align: left;
+        .recipe-title {
+
             font-size: 14.72px;
             letter-spacing: -0.32px;
             font-weight: 600;
-            //width: 100%;
+            width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
-            transition: width ease 800ms;
         }
 
-        p {
-            text-align: left;
+        .recipe-content {
             font-size: 11.84px;
             font-weight: 200;
             padding-top: 2.24px;
-            //width: 100%;
+            width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
-            transition: width ease 800ms;
         }
     }
 
@@ -146,28 +226,30 @@ i {
         font-weight: 600;
         letter-spacing: -0.96px;
         color: #353535;
-        margin-right: 15.04px;
-        overflow: visible;
+        margin-right: 19px;
+        margin-left: 10px;
     }
 
     .checkbox {
+        width: 80px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 52.16px;
-        transition: width ease 800ms;
-        overflow: hidden;
-        height: 100%;
-        font-size: 19.2px;
+        justify-content: center;
+        transition: margin ease 0.6s;
+        height: calc(100% + 2px);
+        font-size: 17px;
         background-color: $color-tertiary;
         border-radius: 0 12.8px 12.8px 0;
+        margin-bottom: -1px;
+        margin-right: min(-67px, -20%);
+
+        @media only screen and (min-width: 768px) {
+            margin-right: -70px;
+        }
 
         i {
             color: white;
-            transition: transform ease 800ms;
+
         }
     }
 }
@@ -182,11 +264,13 @@ i {
     }
     */
     .checkbox {
-        //width: 52.16px;
-        transition-duration: 800ms;
+        margin-right: 0px;
+
 
         i {
-            transform: rotate(360deg);
+            animation-name: spin;
+            animation-duration: 0.6s;
+            animation-fill-mode: forwards;
         }
     }
 }
@@ -200,6 +284,7 @@ i {
     background-color: $c-white;
     margin-top: 16px;
     box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
+    width: max(290px, 20%);
 
     .container-column {
         position: relative;
@@ -230,8 +315,22 @@ i {
         align-items: center;
         padding-top: 14.4px;
         padding-left: 11.2px;
-        padding-right: 20.8px;
+        padding-right: 14px;
         padding-bottom: 12.8px;
+    }
+
+    .link-menu {
+        text-decoration: none;
+        color: $c-black;
+    }
+
+    .link-menu:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
     }
 
     h3 {
@@ -244,55 +343,8 @@ i {
         font-weight: 300;
     }
 
-
-
-
-
-    .heart-top {
-        outline: none;
-        border: none;
-        display: flex;
-        align-items: flex-start;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    .heart-top i {
-        background: white;
-        height: 14px;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: height ease 0.2s;
-        font-size: 14px;
-    }
-
-    .heart-top:hover {
-        i {
-            height: 0;
-        }
-    }
-
-    .heart-bottom {
-        outline: none;
-        border: none;
-        display: flex;
-        align-items: flex-start;
-        background: transparent;
-        padding: 0;
-    }
-
-    .heart-bottom i {
-        height: 14px;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: height ease 0.2s;
-        font-size: 14px;
-        background: linear-gradient(20deg, $color-secondary, $color-primary 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        font-weight: 600;
+    .heart-container {
+        margin-bottom: 15px;
     }
 
 }
@@ -307,10 +359,11 @@ i {
 
     .search {
         background-color: $c-gray--darkened;
+        box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
+
 
 
         .wrapper {
-            box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
             padding-top: min(15px, 4.5%);
             padding-bottom: min(10px, 3.5%);
         }
@@ -343,7 +396,7 @@ i {
         }
 
         h2 {
-            padding-bottom: min(27.5, 8.5%);
+            padding-bottom: min(24.5px, 8.5%);
             //padding-left: 4.5%;
             color: #353535;
         }
@@ -354,12 +407,20 @@ i {
     h1 {
         padding-top: min(39px, 12%);
         padding-bottom: min(26px, 8%);
+
+        @media only screen and (min-width: 768px) {
+            text-align: center;
+        }
     }
 }
 
 .third-section {
     h1 {
         padding-top: 44.8px;
+
+        @media only screen and (min-width: 768px) {
+            text-align: center;
+        }
     }
 
     .wrapper>.container-column {
@@ -417,7 +478,6 @@ footer {
         .fa-arrow-left {
             padding-top: 9.6px;
             padding-right: 54.4px;
-            padding-left: 6.4px;
             color: #353535;
             font-size: 17.28px;
         }
@@ -440,10 +500,17 @@ footer {
         position: relative;
         top: 185.6px;
 
+        .wrapper {
+            max-width: 360px;
+
+            @media only screen and (min-width: 992px) {
+                max-width: 992px;
+            }
+        }
+
         .restaurant-name {
             display: flex;
-            align-items: baseline;
-            justify-content: space-between;
+            position: relative;
 
 
             h1 {
@@ -455,11 +522,17 @@ footer {
                 padding-left: 4.8px;
             }
 
-            i {
-                font-size: 19.2px;
-                color: $c-black;
-                padding-right: 20.8px;
+            .heart-container {
+                margin-left: 82px;
+                transform: translateY(33px);
+
+
+                .heart1 {
+                    background-color: #F6F6F6;
+                }
             }
+
+
         }
 
         h2 {
@@ -471,15 +544,75 @@ footer {
             padding-top: 27.2px;
         }
 
-        .button__gradient {
-            margin-top: 41.6px;
-            margin-bottom: 70.4px;
-            width: 160px;
+        .starter {
+
+            .button__order-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            button {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+            }
         }
+
+        .main {
+
+            .button__order-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            button {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+
+            }
+        }
+
+        .dessert {
+
+            .button__order-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            button {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+
+            }
+        }
+
     }
 
-    footer {
-        position: relative;
-        top: 185.6px;
+    .button__gradient {
+        margin-top: 41.6px;
+        margin-bottom: 70.4px;
+        width: 160px;
     }
+}
+
+footer {
+    position: relative;
+    top: 185.6px;
 }

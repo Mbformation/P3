@@ -16,6 +16,13 @@ body {
 
     }
 
+    .container-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: min(20px, 5%);
+    }
+
     .container-row__center {
         display: flex;
         justify-content: center;
@@ -32,9 +39,13 @@ body {
         align-items: center;
     }
 
-    .explore {
-        .wrapper {
-            max-width: 360px;
+    .second-section {
+        .button-container {
+            gap: min(20px, 5%);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
     }
 
@@ -42,14 +53,18 @@ body {
         background-color: #F6F6F6;
 
 
-        div:first-child {
-            padding-bottom: 16px;
+        .container-card {
+            padding-bottom: 56px;
         }
 
     }
 
     footer {
         background-color: #353535;
+
+        @media only screen and (min-width: 768px) {
+            text-align: center;
+        }
     }
 }
 
@@ -61,8 +76,15 @@ header {
     }
 }
 
-.menu {
+.restaurant-unique {
 
+    header {
+        justify-content: center;
+
+        .wrapper {
+            width: 298px;
+        }
+    }
 
     .wrapper {
         box-sizing: border-box;
