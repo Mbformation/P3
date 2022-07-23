@@ -43,6 +43,8 @@ p {
 }
 
 .logo {
+  display: flex;
+  align-self: center;
   width: 140px;
   padding-top: min(18.5px, 7%);
   padding-bottom: min(9px, 3.5%);
@@ -75,13 +77,9 @@ p {
   font-size: 18px;
   width: 20px;
 }
+.heart-container .heart-top:hover .heart1,
 .heart-container .heart-top:active .heart1 {
   height: 0;
-}
-@media only screen and (min-width: 992px) {
-  .heart-container .heart-top:hover .heart1 {
-    height: 0;
-  }
 }
 .heart-container .heart-bottom {
   position: absolute;
@@ -137,6 +135,7 @@ div [type=search] {
   padding-bottom: min(16.2px, 5%);
   background: linear-gradient(175deg, rgb(255, 121, 218) 0%, rgba(147, 86, 255, 0.82) 90%);
   font-size: 13.12px;
+  transition: box-shadow ease 0.2s;
 }
 .button__gradient:hover {
   background: linear-gradient(175deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 255, 0.65) 90%);
@@ -149,6 +148,7 @@ i {
 
 .button__icon {
   box-shadow: 0 2.88px 8.96px 4.16px #E6E6E6;
+  transition: all ease 0.2s;
   font-size: 13.12px;
   font-weight: 600;
   letter-spacing: -0.32px;
@@ -168,6 +168,7 @@ i {
   font-size: 15.36px;
   margin-right: 7%;
   margin-left: 3%;
+  transition: color ease 0.2s;
 }
 .button__icon span {
   display: block;
@@ -187,6 +188,7 @@ i {
 .button__icon:hover,
 .button__icon:active {
   background-color: #F5EDFF;
+  box-shadow: 0 5px 12px 6px #E6E6E6;
 }
 .button__icon:hover i,
 .button__icon:active i {
@@ -196,6 +198,7 @@ i {
 .button__order {
   background-color: white;
   box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
+  transition: box-shadow ease 0.2;
   border-radius: 12.8px;
   width: min(350px, 100%);
   height: 55px;
@@ -269,19 +272,16 @@ i {
   color: white;
 }
 
-.button__order:hover {
-  /*
-  .content {
-      width: 70%;
-      transition-duration: 800ms;
-
-  }
-  */
+.button__order:hover,
+.button__order:active {
+  box-shadow: 4px 6px 10px 3px #E5E5E5;
 }
-.button__order:hover .checkbox {
+.button__order:hover .checkbox,
+.button__order:active .checkbox {
   margin-right: 0px;
 }
-.button__order:hover .checkbox i {
+.button__order:hover .checkbox i,
+.button__order:active .checkbox i {
   animation-name: spin;
   animation-duration: 0.6s;
   animation-fill-mode: forwards;
@@ -296,6 +296,7 @@ i {
   background-color: white;
   margin-top: 16px;
   box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
+  transition: box-shadow ease 0.2s;
   width: max(290px, 20%);
 }
 .card .container-column {
@@ -354,6 +355,10 @@ i {
   display: initial;
 }
 
+.card:hover {
+  box-shadow: 0 8px 8px 3px #E5E5E5;
+}
+
 .first-section .search {
   background-color: #EAEAEA;
   box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
@@ -405,9 +410,6 @@ i {
     text-align: center;
   }
 }
-.third-section .wrapper > .container-column {
-  margin-bottom: 54.4px;
-}
 
 footer span {
   font-family: "Shrikhand", cursive;
@@ -443,22 +445,30 @@ footer li a {
 }
 
 .restaurant-unique header .fa-arrow-left {
-  padding-top: 9.6px;
-  padding-right: 54.4px;
+  position: absolute;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 10px;
   color: #353535;
   font-size: 17.28px;
+}
+.restaurant-unique header .logo {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.restaurant-unique .background-image {
+  height: 186px;
 }
 .restaurant-unique .background-image img {
   height: 224px;
   width: 100%;
   object-fit: cover;
-  position: absolute;
 }
 .restaurant-unique .order {
   background-color: #F6F6F6;
   border-radius: 38.4px 38.4px 0 0;
   position: relative;
-  top: 185.6px;
 }
 .restaurant-unique .order .wrapper {
   max-width: 360px;
@@ -471,6 +481,8 @@ footer li a {
 .restaurant-unique .order .restaurant-name {
   display: flex;
   position: relative;
+  align-items: baseline;
+  justify-content: space-between;
 }
 .restaurant-unique .order .restaurant-name h1 {
   font-family: "Shrikhand", cursive;
@@ -481,8 +493,7 @@ footer li a {
   padding-left: 4.8px;
 }
 .restaurant-unique .order .restaurant-name .heart-container {
-  margin-left: 82px;
-  transform: translateY(33px);
+  transform: translateY(-4px);
 }
 .restaurant-unique .order .restaurant-name .heart-container .heart1 {
   background-color: #F6F6F6;
@@ -561,11 +572,6 @@ footer li a {
   width: 160px;
 }
 
-footer {
-  position: relative;
-  top: 185.6px;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -607,9 +613,11 @@ body .second-section .button-container {
 }
 body .third-section {
   background-color: #F6F6F6;
+  margin-bottom: 0;
 }
 body .third-section .container-card {
   padding-bottom: 56px;
+  margin-bottom: 0;
 }
 body footer {
   background-color: #353535;
@@ -620,17 +628,6 @@ body footer {
   }
 }
 
-header .wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.restaurant-unique header {
-  justify-content: center;
-}
-.restaurant-unique header .wrapper {
-  width: 298px;
-}
 .restaurant-unique .wrapper {
   box-sizing: border-box;
   max-width: 1400px;

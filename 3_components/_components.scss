@@ -1,4 +1,6 @@
 .logo {
+    display: flex;
+    align-self: center;
     width: 140px;
     padding-top: min(18.5px, 7%);
     padding-bottom: min(9px, 3.5%);
@@ -36,17 +38,10 @@
 
     }
 
+    .heart-top:hover,
     .heart-top:active {
         .heart1 {
             height: 0;
-        }
-    }
-
-    @media only screen and (min-width: 992px) {
-        .heart-top:hover {
-            .heart1 {
-                height: 0;
-            }
         }
     }
 
@@ -109,6 +104,7 @@ div [type=search] {
     padding-bottom: min(16.2px, 5%);
     background: linear-gradient(175deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 255, 0.82) 90%);
     font-size: 13.12px;
+    transition: box-shadow ease 0.2s;
 
     &:hover {
         background: linear-gradient(175deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 255, 0.65) 90%);
@@ -124,6 +120,7 @@ i {
 
 .button__icon {
     box-shadow: 0 2.88px 8.96px 4.16px #E6E6E6;
+    transition: all ease 0.2s;
     font-size: 13.12px;
     font-weight: 600;
     letter-spacing: -0.32px;
@@ -143,6 +140,7 @@ i {
         font-size: 15.36px;
         margin-right: 7%;
         margin-left: 3%;
+        transition: color ease 0.2s;
     }
 
     span {
@@ -164,6 +162,7 @@ i {
 .button__icon:hover,
 .button__icon:active {
     background-color: #F5EDFF;
+    box-shadow: 0 5px 12px 6px #E6E6E6;
 
     i {
         color: $color-primary;
@@ -173,6 +172,7 @@ i {
 .button__order {
     background-color: $c-white;
     box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
+    transition: box-shadow ease 0.2;
     //border: 0 solid $c-white;
     border-radius: 12.8px;
     width: min(350px, 100%);
@@ -254,15 +254,11 @@ i {
     }
 }
 
-.button__order:hover {
+.button__order:hover,
+.button__order:active {
 
-    /*
-    .content {
-        width: 70%;
-        transition-duration: 800ms;
+    box-shadow: 4px 6px 10px 3px #E5E5E5;
 
-    }
-    */
     .checkbox {
         margin-right: 0px;
 
@@ -284,6 +280,7 @@ i {
     background-color: $c-white;
     margin-top: 16px;
     box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
+    transition: box-shadow ease 0.2s;
     width: max(290px, 20%);
 
     .container-column {
@@ -355,6 +352,10 @@ i {
     }
 }
 
+.card:hover {
+    box-shadow: 0 8px 8px 3px #E5E5E5;
+}
+
 .first-section {
 
     .search {
@@ -422,10 +423,6 @@ i {
             text-align: center;
         }
     }
-
-    .wrapper>.container-column {
-        margin-bottom: 54.4px;
-    }
 }
 
 footer {
@@ -476,21 +473,29 @@ footer {
 
     header {
         .fa-arrow-left {
-            padding-top: 9.6px;
-            padding-right: 54.4px;
+            position: absolute;
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 10px;
             color: #353535;
             font-size: 17.28px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
         }
     }
 
     .background-image {
 
+        height: 186px;
 
         img {
             height: 224px;
             width: 100%;
             object-fit: cover;
-            position: absolute;
         }
     }
 
@@ -498,7 +503,6 @@ footer {
         background-color: #F6F6F6;
         border-radius: 38.4px 38.4px 0 0;
         position: relative;
-        top: 185.6px;
 
         .wrapper {
             max-width: 360px;
@@ -511,6 +515,8 @@ footer {
         .restaurant-name {
             display: flex;
             position: relative;
+            align-items: baseline;
+            justify-content: space-between;
 
 
             h1 {
@@ -523,14 +529,15 @@ footer {
             }
 
             .heart-container {
-                margin-left: 82px;
-                transform: translateY(33px);
-
+                transform: translateY(-4px);
 
                 .heart1 {
                     background-color: #F6F6F6;
                 }
             }
+
+
+
 
 
         }
@@ -610,9 +617,4 @@ footer {
         margin-bottom: 70.4px;
         width: 160px;
     }
-}
-
-footer {
-    position: relative;
-    top: 185.6px;
 }

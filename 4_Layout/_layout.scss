@@ -39,6 +39,8 @@ body {
         align-items: center;
     }
 
+
+
     .second-section {
         .button-container {
             gap: min(20px, 5%);
@@ -51,10 +53,14 @@ body {
 
     .third-section {
         background-color: #F6F6F6;
+        margin-bottom: 0;
+
+
 
 
         .container-card {
             padding-bottom: 56px;
+            margin-bottom: 0;
         }
 
     }
@@ -68,23 +74,8 @@ body {
     }
 }
 
-header {
-
-    .wrapper {
-        display: flex;
-        align-items: center;
-    }
-}
-
 .restaurant-unique {
 
-    header {
-        justify-content: center;
-
-        .wrapper {
-            width: 298px;
-        }
-    }
 
     .wrapper {
         box-sizing: border-box;
