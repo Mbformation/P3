@@ -154,15 +154,14 @@ i {
   letter-spacing: -0.32px;
   border: 0px solid #FF79DA;
   border-radius: 22.4px;
-  padding-top: min(29px, 9%);
-  padding-bottom: min(22px, 7%);
-  margin-bottom: min(32px, 10%);
+  padding-top: 29px;
+  padding-bottom: 22px;
   text-align: start;
   background-color: #F6F6F6;
   display: flex;
   margin-left: 8px;
-  max-width: 306px;
-  min-width: 280px;
+  width: 97%;
+  max-width: 500px;
 }
 .button__icon i {
   font-size: 15.36px;
@@ -198,9 +197,9 @@ i {
 .button__order {
   background-color: white;
   box-shadow: 0 4.16px 8px 1.28px #E5E5E5;
-  transition: box-shadow ease 0.2;
+  transition: box-shadow ease 0.2s;
   border-radius: 12.8px;
-  width: min(350px, 100%);
+  width: 100%;
   height: 55px;
   display: flex;
   align-items: flex-end;
@@ -251,7 +250,7 @@ i {
   margin-left: 10px;
 }
 .button__order .checkbox {
-  width: 80px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,12 +260,8 @@ i {
   background-color: #99E2D0;
   border-radius: 0 12.8px 12.8px 0;
   margin-bottom: -1px;
-  margin-right: min(-67px, -20%);
-}
-@media only screen and (min-width: 768px) {
-  .button__order .checkbox {
-    margin-right: -70px;
-  }
+  margin-right: -50px;
+  flex-shrink: 0;
 }
 .button__order .checkbox i {
   color: white;
@@ -278,7 +273,7 @@ i {
 }
 .button__order:hover .checkbox,
 .button__order:active .checkbox {
-  margin-right: 0px;
+  margin-right: 0;
 }
 .button__order:hover .checkbox i,
 .button__order:active .checkbox i {
@@ -394,12 +389,16 @@ i {
 
 .second-section h1 {
   padding-top: min(39px, 12%);
-  padding-bottom: min(26px, 8%);
+  padding-bottom: 6px;
 }
 @media only screen and (min-width: 768px) {
   .second-section h1 {
     text-align: center;
   }
+}
+.second-section .button-box {
+  margin-top: 20px;
+  width: 100%;
 }
 
 .third-section h1 {
@@ -470,14 +469,6 @@ footer li a {
   border-radius: 38.4px 38.4px 0 0;
   position: relative;
 }
-.restaurant-unique .order .wrapper {
-  max-width: 360px;
-}
-@media only screen and (min-width: 992px) {
-  .restaurant-unique .order .wrapper {
-    max-width: 992px;
-  }
-}
 .restaurant-unique .order .restaurant-name {
   display: flex;
   position: relative;
@@ -498,6 +489,20 @@ footer li a {
 .restaurant-unique .order .restaurant-name .heart-container .heart1 {
   background-color: #F6F6F6;
 }
+.restaurant-unique .order .menu-display {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .restaurant-unique .order .menu-display {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .restaurant-unique .order .menu-display .menu-display > div {
+    width: 15%;
+  }
+}
 .restaurant-unique .order h2 {
   text-transform: uppercase;
   font-size: 13.44px;
@@ -505,11 +510,6 @@ footer li a {
   font-weight: 300;
   padding-bottom: 3.2px;
   padding-top: 27.2px;
-}
-.restaurant-unique .order .starter .button__order-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 .restaurant-unique .order .starter button {
   animation: loading-item 1s ease-out both;
@@ -526,11 +526,6 @@ footer li a {
 .restaurant-unique .order .starter button:nth-of-type(4) {
   animation-delay: 1s;
 }
-.restaurant-unique .order .main .button__order-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .restaurant-unique .order .main button {
   animation: loading-item 1s ease-out both;
 }
@@ -545,11 +540,6 @@ footer li a {
 }
 .restaurant-unique .order .main button:nth-of-type(4) {
   animation-delay: 1s;
-}
-.restaurant-unique .order .dessert .button__order-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 .restaurant-unique .order .dessert button {
   animation: loading-item 1s ease-out both;
@@ -605,11 +595,17 @@ body .container-column__center {
   align-items: center;
 }
 body .second-section .button-container {
-  gap: min(20px, 5%);
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 57px;
+}
+@media only screen and (min-width: 992px) {
+  body .second-section .button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+    grid-gap: 25px;
+  }
 }
 body .third-section {
   background-color: #F6F6F6;
