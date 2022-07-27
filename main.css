@@ -16,6 +16,23 @@
     opacity: 1;
   }
 }
+@keyframes text-effect {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes loading-fade {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 h1 {
   font-size: 20.48px;
   font-weight: 500;
@@ -42,12 +59,50 @@ p {
   margin: 0;
 }
 
+.landing-loader {
+  font-family: "Shrikhand", cursive;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  background: #353535;
+  overflow: hidden;
+  animation: loading-fade 3s forwards;
+}
+.landing-loader h1 {
+  font-size: 40px;
+  background-image: linear-gradient(-225deg, #9356DC 0%, #FF79DA 25%, #99E2D0 65%, #ffffff 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-effect 2s linear infinite;
+}
+@media only screen and (min-width: 768px) {
+  .landing-loader h1 {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .landing-loader h1 {
+    font-size: 80px;
+  }
+}
+
 .logo {
   display: flex;
   align-self: center;
   width: 140px;
-  padding-top: min(18.5px, 7%);
-  padding-bottom: min(9px, 3.5%);
+  padding-top: 18px;
+  padding-bottom: 9px;
 }
 
 .heart-container {
@@ -129,10 +184,10 @@ div [type=search] {
   border: 0 solid #FF79DA;
   border-radius: 22.4px;
   color: white;
-  padding-left: min(17.8px, 5.5%);
-  padding-right: min(19.4px, 6%);
-  padding-top: min(14.5px, 4.5%);
-  padding-bottom: min(16.2px, 5%);
+  padding-left: 17.5px;
+  padding-right: 19.5px;
+  padding-top: 14.5px;
+  padding-bottom: 16px;
   background: linear-gradient(175deg, rgb(255, 121, 218) 0%, rgba(147, 86, 255, 0.82) 90%);
   font-size: 13.12px;
   transition: box-shadow ease 0.2s;
@@ -161,12 +216,13 @@ i {
   display: flex;
   margin-left: 8px;
   width: 97%;
-  max-width: 500px;
+  margin: 0 auto;
+  max-width: 400px;
 }
 .button__icon i {
   font-size: 15.36px;
-  margin-right: 7%;
-  margin-left: 3%;
+  margin-right: 25px;
+  margin-left: 10px;
   transition: color ease 0.2s;
 }
 .button__icon span {
@@ -210,7 +266,7 @@ i {
 }
 @media only screen and (min-width: 992px) {
   .button__order {
-    width: 450px;
+    margin: 10px 0 0 10px;
   }
 }
 .button__order .content {
@@ -292,7 +348,12 @@ i {
   margin-top: 16px;
   box-shadow: 0 3.2px 8px 1.6px #E5E5E5;
   transition: box-shadow ease 0.2s;
-  width: max(290px, 20%);
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .card {
+    width: calc(50% - 30px);
+  }
 }
 .card .container-column {
   position: relative;
@@ -359,12 +420,12 @@ i {
   box-shadow: inset 0 2.56px 2.24px 0 #CFCFCF;
 }
 .first-section .search .wrapper {
-  padding-top: min(15px, 4.5%);
-  padding-bottom: min(10px, 3.5%);
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 .first-section .search .fa-location-dot {
   font-size: 13.76px;
-  padding-right: min(12px, 3.5%);
+  padding-right: 12px;
   color: #353535;
 }
 .first-section .search p {
@@ -375,20 +436,20 @@ i {
 }
 .first-section .explore {
   text-align: center;
-  padding-top: min(35px, 11%);
-  padding-bottom: min(50px, 15.5%);
+  padding-top: 35px;
+  padding-bottom: 50px;
   background-color: #F6F6F6;
 }
 .first-section .explore h1 {
-  padding-bottom: min(10px, 3%);
+  padding-bottom: 10px;
 }
 .first-section .explore h2 {
-  padding-bottom: min(24.5px, 8.5%);
+  padding-bottom: 24.5px;
   color: #353535;
 }
 
 .second-section h1 {
-  padding-top: min(39px, 12%);
+  padding-top: 39px;
   padding-bottom: 6px;
 }
 @media only screen and (min-width: 768px) {
@@ -485,6 +546,7 @@ footer li a {
 }
 .restaurant-unique .order .restaurant-name .heart-container {
   transform: translateY(-4px);
+  margin-right: 10px;
 }
 .restaurant-unique .order .restaurant-name .heart-container .heart1 {
   background-color: #F6F6F6;
@@ -495,12 +557,10 @@ footer li a {
 }
 @media only screen and (min-width: 992px) {
   .restaurant-unique .order .menu-display {
-    flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-  }
-  .restaurant-unique .order .menu-display .menu-display > div {
-    width: 15%;
+    height: 320px;
+    gap: 20px;
+    width: calc(100% - 50px);
   }
 }
 .restaurant-unique .order h2 {
@@ -510,6 +570,14 @@ footer li a {
   font-weight: 300;
   padding-bottom: 3.2px;
   padding-top: 27.2px;
+}
+.restaurant-unique .order .starter {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .restaurant-unique .order .starter {
+    width: 33%;
+  }
 }
 .restaurant-unique .order .starter button {
   animation: loading-item 1s ease-out both;
@@ -526,6 +594,299 @@ footer li a {
 .restaurant-unique .order .starter button:nth-of-type(4) {
   animation-delay: 1s;
 }
+.restaurant-unique .order .starter button:nth-of-type(5) {
+  animation-delay: 1.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(6) {
+  animation-delay: 1.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(7) {
+  animation-delay: 1.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(8) {
+  animation-delay: 2s;
+}
+.restaurant-unique .order .starter button:nth-of-type(9) {
+  animation-delay: 2.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(10) {
+  animation-delay: 2.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(11) {
+  animation-delay: 2.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(12) {
+  animation-delay: 3s;
+}
+.restaurant-unique .order .starter button:nth-of-type(13) {
+  animation-delay: 3.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(14) {
+  animation-delay: 3.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(15) {
+  animation-delay: 3.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(16) {
+  animation-delay: 4s;
+}
+.restaurant-unique .order .starter button:nth-of-type(17) {
+  animation-delay: 4.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(18) {
+  animation-delay: 4.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(19) {
+  animation-delay: 4.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(20) {
+  animation-delay: 5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(21) {
+  animation-delay: 5.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(22) {
+  animation-delay: 5.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(23) {
+  animation-delay: 5.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(24) {
+  animation-delay: 6s;
+}
+.restaurant-unique .order .starter button:nth-of-type(25) {
+  animation-delay: 6.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(26) {
+  animation-delay: 6.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(27) {
+  animation-delay: 6.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(28) {
+  animation-delay: 7s;
+}
+.restaurant-unique .order .starter button:nth-of-type(29) {
+  animation-delay: 7.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(30) {
+  animation-delay: 7.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(31) {
+  animation-delay: 7.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(32) {
+  animation-delay: 8s;
+}
+.restaurant-unique .order .starter button:nth-of-type(33) {
+  animation-delay: 8.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(34) {
+  animation-delay: 8.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(35) {
+  animation-delay: 8.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(36) {
+  animation-delay: 9s;
+}
+.restaurant-unique .order .starter button:nth-of-type(37) {
+  animation-delay: 9.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(38) {
+  animation-delay: 9.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(39) {
+  animation-delay: 9.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(40) {
+  animation-delay: 10s;
+}
+.restaurant-unique .order .starter button:nth-of-type(41) {
+  animation-delay: 10.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(42) {
+  animation-delay: 10.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(43) {
+  animation-delay: 10.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(44) {
+  animation-delay: 11s;
+}
+.restaurant-unique .order .starter button:nth-of-type(45) {
+  animation-delay: 11.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(46) {
+  animation-delay: 11.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(47) {
+  animation-delay: 11.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(48) {
+  animation-delay: 12s;
+}
+.restaurant-unique .order .starter button:nth-of-type(49) {
+  animation-delay: 12.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(50) {
+  animation-delay: 12.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(51) {
+  animation-delay: 12.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(52) {
+  animation-delay: 13s;
+}
+.restaurant-unique .order .starter button:nth-of-type(53) {
+  animation-delay: 13.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(54) {
+  animation-delay: 13.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(55) {
+  animation-delay: 13.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(56) {
+  animation-delay: 14s;
+}
+.restaurant-unique .order .starter button:nth-of-type(57) {
+  animation-delay: 14.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(58) {
+  animation-delay: 14.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(59) {
+  animation-delay: 14.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(60) {
+  animation-delay: 15s;
+}
+.restaurant-unique .order .starter button:nth-of-type(61) {
+  animation-delay: 15.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(62) {
+  animation-delay: 15.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(63) {
+  animation-delay: 15.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(64) {
+  animation-delay: 16s;
+}
+.restaurant-unique .order .starter button:nth-of-type(65) {
+  animation-delay: 16.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(66) {
+  animation-delay: 16.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(67) {
+  animation-delay: 16.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(68) {
+  animation-delay: 17s;
+}
+.restaurant-unique .order .starter button:nth-of-type(69) {
+  animation-delay: 17.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(70) {
+  animation-delay: 17.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(71) {
+  animation-delay: 17.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(72) {
+  animation-delay: 18s;
+}
+.restaurant-unique .order .starter button:nth-of-type(73) {
+  animation-delay: 18.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(74) {
+  animation-delay: 18.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(75) {
+  animation-delay: 18.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(76) {
+  animation-delay: 19s;
+}
+.restaurant-unique .order .starter button:nth-of-type(77) {
+  animation-delay: 19.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(78) {
+  animation-delay: 19.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(79) {
+  animation-delay: 19.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(80) {
+  animation-delay: 20s;
+}
+.restaurant-unique .order .starter button:nth-of-type(81) {
+  animation-delay: 20.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(82) {
+  animation-delay: 20.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(83) {
+  animation-delay: 20.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(84) {
+  animation-delay: 21s;
+}
+.restaurant-unique .order .starter button:nth-of-type(85) {
+  animation-delay: 21.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(86) {
+  animation-delay: 21.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(87) {
+  animation-delay: 21.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(88) {
+  animation-delay: 22s;
+}
+.restaurant-unique .order .starter button:nth-of-type(89) {
+  animation-delay: 22.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(90) {
+  animation-delay: 22.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(91) {
+  animation-delay: 22.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(92) {
+  animation-delay: 23s;
+}
+.restaurant-unique .order .starter button:nth-of-type(93) {
+  animation-delay: 23.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(94) {
+  animation-delay: 23.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(95) {
+  animation-delay: 23.75s;
+}
+.restaurant-unique .order .starter button:nth-of-type(96) {
+  animation-delay: 24s;
+}
+.restaurant-unique .order .starter button:nth-of-type(97) {
+  animation-delay: 24.25s;
+}
+.restaurant-unique .order .starter button:nth-of-type(98) {
+  animation-delay: 24.5s;
+}
+.restaurant-unique .order .starter button:nth-of-type(99) {
+  animation-delay: 24.75s;
+}
+.restaurant-unique .order .main {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .restaurant-unique .order .main {
+    width: 33%;
+  }
+}
 .restaurant-unique .order .main button {
   animation: loading-item 1s ease-out both;
 }
@@ -540,6 +901,14 @@ footer li a {
 }
 .restaurant-unique .order .main button:nth-of-type(4) {
   animation-delay: 1s;
+}
+.restaurant-unique .order .dessert {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .restaurant-unique .order .dessert {
+    width: 33%;
+  }
 }
 .restaurant-unique .order .dessert button {
   animation: loading-item 1s ease-out both;
@@ -579,7 +948,7 @@ body .container-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: min(20px, 5%);
+  gap: 20px;
 }
 body .container-row__center {
   display: flex;
@@ -612,8 +981,23 @@ body .third-section {
   margin-bottom: 0;
 }
 body .third-section .container-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   padding-bottom: 56px;
   margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  body .third-section .container-card {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body .third-section .container-card {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
 body footer {
   background-color: #353535;
