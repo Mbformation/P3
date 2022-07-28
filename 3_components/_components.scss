@@ -11,16 +11,11 @@
     width: 100%;
     z-index: 4;
     background: #353535;
-    overflow: hidden;
     animation: loading-fade 3s forwards;
-    //transition: visibility ease 3s;
-
 
     h1 {
         font-size: 40px;
-        background-image: linear-gradient(-225deg, #9356DC 0%, #FF79DA 25%, #99E2D0 65%, #ffffff 100%);
-        background-size: auto auto;
-        background-clip: border-box;
+        background-image: linear-gradient(-225deg, #9356DC 0%, #99E2D0 40%, #008766 65%, #FF79DA 100%);
         background-size: 200% auto;
         background-clip: text;
         -webkit-background-clip: text;
@@ -173,8 +168,6 @@ i {
     margin-left: 8px;
     width: 97%;
     margin: 0 auto;
-
-
     max-width: 400px;
     //min-width: 280px;
 

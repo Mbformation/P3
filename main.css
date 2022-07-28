@@ -23,10 +23,10 @@
 }
 @keyframes loading-fade {
   0% {
-    opacity: 1;
+    opacity: 0.75;
   }
-  75% {
-    opacity: 1;
+  85% {
+    opacity: 0.75;
   }
   100% {
     opacity: 0;
@@ -72,14 +72,11 @@ p {
   width: 100%;
   z-index: 4;
   background: #353535;
-  overflow: hidden;
   animation: loading-fade 3s forwards;
 }
 .landing-loader h1 {
   font-size: 40px;
-  background-image: linear-gradient(-225deg, #9356DC 0%, #FF79DA 25%, #99E2D0 65%, #ffffff 100%);
-  background-size: auto auto;
-  background-clip: border-box;
+  background-image: linear-gradient(-225deg, #9356DC 0%, #99E2D0 40%, #008766 65%, #FF79DA 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -939,7 +936,7 @@ body .wrapper {
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 16px;
 }
 body .container-row {
   display: flex;

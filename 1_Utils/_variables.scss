@@ -40,11 +40,11 @@ $c-gradient: linear-gradient(20deg, $color-secondary, $color-primary 100%);
 
 @keyframes loading-fade {
     0% {
-        opacity: 1;
+        opacity: 0.75;
     }
 
-    75% {
-        opacity: 1;
+    85% {
+        opacity: 0.75;
 
     }
 
