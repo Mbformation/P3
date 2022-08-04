@@ -1,16 +1,16 @@
 // utils
 
-@import "1_utils/variables";
-@import "1_utils/functions";
-@import "1_utils/mixins";
+@import "_utils/variables";
+@import "_utils/functions";
+@import "_utils/mixins";
 
 // base
-@import "2_base/typography";
+@import "_base/typography";
 
 // components (buttons...)
-@import "3_components/components";
+@import "_components/components";
 
 // layout (header, nav, container, form...)
-@import "4_layout/layout";
+@import "_layout/layout";
 
 // pages

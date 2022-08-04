@@ -40,16 +40,24 @@ $c-gradient: linear-gradient(20deg, $color-secondary, $color-primary 100%);
 
 @keyframes loading-fade {
     0% {
-        opacity: 0.75;
+        opacity: 1;
     }
 
     85% {
-        opacity: 0.75;
+        opacity: 1;
 
     }
 
     100% {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@keyframes display-hidden {
+
+    from,
+    to {
+        overflow: hidden;
     }
 }
