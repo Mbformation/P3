@@ -1,0 +1,136 @@
+.restaurant-unique {
+    .wrapper {
+        box-sizing: border-box;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 11.2px;
+    }
+
+    .text-container {
+        border-bottom: 3.2px solid $color-tertiary;
+        width: 33.6px;
+        margin-left: 4.8px;
+    }
+
+    .background-image {
+        height: 186px;
+
+        img {
+            height: 224px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .order {
+        background-color: #F6F6F6;
+        border-radius: 38px 38px 0 0;
+        position: relative;
+
+        .restaurant-name {
+            display: flex;
+            position: relative;
+            align-items: baseline;
+            justify-content: space-between;
+
+            h1 {
+                font-family: "Shrikhand", cursive;
+                font-size: 23px;
+                font-weight: 100;
+                letter-spacing: 0.5px;
+                padding-top: 29px;
+                padding-left: 5px;
+            }
+
+            .heart-container {
+                transform: translateY(-4px);
+                margin-right: 10px;
+
+                .heart1 {
+                    background-color: #F6F6F6;
+                }
+            }
+        }
+
+        .menu-display {
+            display: flex;
+            flex-direction: column;
+
+            @media only screen and (min-width: 992px) {
+                flex-wrap: wrap;
+                height: 320px;
+                gap: 20px;
+                width: calc(100% - 50px);
+            }
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 13.5px;
+            letter-spacing: -0.03px;
+            font-weight: 300;
+            padding-bottom: 3px;
+            padding-top: 27px;
+        }
+
+        .starter {
+            width: 100%;
+
+            @media only screen and (min-width: 992px) {
+                width: 33%;
+            }
+
+            button {
+                @for $i from 1 through 99 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+            }
+        }
+
+        .main {
+            width: 100%;
+
+            @media only screen and (min-width: 992px) {
+                width: 33%;
+            }
+
+            button {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+            }
+        }
+
+        .dessert {
+            width: 100%;
+
+            @media only screen and (min-width: 992px) {
+                width: 33%;
+            }
+
+            button {
+                @for $i from 1 through 4 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: #{$i * 0.25}s;
+                    }
+                }
+
+                animation: loading-item 1s ease-out both;
+            }
+        }
+    }
+
+    .button__gradient {
+        margin-top: 41px;
+        margin-bottom: 70px;
+        width: 160px;
+    }
+}
